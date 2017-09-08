@@ -13,6 +13,7 @@ public class DeterministicAutomaton {
 	
 	public  DeterministicAutomaton(List<Rule> rules){
 				
+		
 		Boolean hasIndeterminism = false; 
 
 		this.rules.addAll(rules);

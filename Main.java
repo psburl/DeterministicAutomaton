@@ -10,8 +10,8 @@ import globals.GlobalInfo;
 
 public class Main {
 
-	public static void main(String[] args) throws Exception {
-			
+	private static DeterministicAutomaton getAutomaton() throws Exception{
+
 		List<String> input = SingletonInput.getInstance().getContentLines();
 		List<String> grammar = new ArrayList<String>();
 
@@ -30,6 +30,13 @@ public class Main {
 		UnreachableRemotion remotion = new UnreachableRemotion(automaton);
 		
 		automaton = remotion.Remove();
+
+		return automaton;
+	}
+
+	public static void main(String[] args) throws Exception {
+			
+		DeterministicAutomaton automaton = getAutomaton();
 		
 		automaton.printTable();
 	}
