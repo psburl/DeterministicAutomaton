@@ -13,6 +13,7 @@ public class GlobalInfo {
     private List<String> finalStates = new ArrayList<String>();
     private List<String> states = new ArrayList<String>();
     private String initialState = "";
+    private List<String> tokens = new ArrayList<String>();
     
     public static GlobalInfo getInstance(){
         
@@ -34,12 +35,22 @@ public class GlobalInfo {
 			instance.letters.add(letter);
 	}
 
+	public void addToken(String token) {
+		 
+		if(instance.tokens.contains(token) == false)
+			instance.tokens.add(token);
+	}
+
 	public List<String> getFinalStates() {
 		return finalStates;
 	}
 	
 	public List<String> getAllStates() {
 		return states;
+	}
+
+	public List<String> getAllTokens() {
+		return tokens;
 	}
 
 	public void addFinalState(String finalStates) {
